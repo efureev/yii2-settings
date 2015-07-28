@@ -15,7 +15,7 @@ use yii\helpers\Html;
 
 $this->title = Module::t(
 	'settings',
-	'Create {modelClass}',
+	'Create',
 	[
 		'modelClass' => Module::t('settings', 'Setting'),
 	]

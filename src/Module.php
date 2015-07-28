@@ -53,7 +53,7 @@ class Module extends \yii\base\Module
 		Yii::$app->i18n->translations['extensions/yii2-settings/*'] = [
 			'class' => 'yii\i18n\PhpMessageSource',
 			'sourceLanguage' => 'en-US',
-			'basePath' => '@vendor/efureev/yii2-settings/messages',
+			'basePath' => '@vendor/efureev/yii2-settings/src/messages',
 			'fileMap' => [
 				'extensions/yii2-settings/settings' => 'settings.php',
 			],

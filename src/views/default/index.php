@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		Html::a(
 			Module::t(
 				'settings',
-				'Create {modelClass}',
+				'Create',
 				[
 					'modelClass' => Module::t('settings', 'Setting'),
 				]
