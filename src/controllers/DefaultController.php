@@ -46,7 +46,7 @@ class DefaultController extends Controller
 			'toggle' => [
 				'class' => ToggleAction::className(),
 				'modelClass' => 'efureev\settings\models\Setting',
-				//'setFlash' => true,
+//				'setFlash' => true,
 			]
 		];
 	}

@@ -17,7 +17,7 @@ class Module extends \yii\base\Module
 	/**
 	 * @var string The controller namespace to use
 	 */
-	public $controllerNamespace = 'pheme\settings\controllers';
+	public $controllerNamespace = 'efureev\settings\controllers';
 
 	/**
 	 * Translates a message. This is just a wrapper of Yii::t
