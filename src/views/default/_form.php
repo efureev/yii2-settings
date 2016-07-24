@@ -11,7 +11,7 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View                  $this
- * @var pheme\settings\models\Setting $model
+ * @var efureev\settings\models\Setting $model
  * @var yii\widgets\ActiveForm        $form
  */
 ?>
@@ -30,15 +30,7 @@ use yii\widgets\ActiveForm;
 
 	<?=
 	$form->field($model, 'type')->dropDownList(
-		[
-			'string' => 'string',
-			'integer' => 'integer',
-			'boolean' => 'boolean',
-			'float' => 'float',
-			'array' => 'array',
-			'object' => 'object',
-			'null' => 'null'
-		]
+		$model->getTypes()
 	)->hint(Module::t('settings', 'Change at your own risk')) ?>
 
 	<div class="form-group">

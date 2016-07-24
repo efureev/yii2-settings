@@ -1,15 +1,5 @@
 <?php
-/**
- * @link      http://phe.me
- * @copyright Copyright (c) 2014 Pheme
- * @license   MIT http://opensource.org/licenses/MIT
- */
 
-use yii\db\Schema;
-
-/**
- * @author Aris Karageorgos <aris@phe.me>
- */
 class m140618_045255_create_settings extends \yii\db\Migration
 {
 	public function up()
@@ -21,20 +11,23 @@ class m140618_045255_create_settings extends \yii\db\Migration
 		$this->createTable(
 			'{{%settings}}',
 			[
-				'id' => Schema::TYPE_PK,
-				'type' => Schema::TYPE_STRING,
-				'section' => Schema::TYPE_STRING,
-				'key' => Schema::TYPE_STRING,
-				'value' => Schema::TYPE_TEXT,
-				'active' => Schema::TYPE_BOOLEAN,
-				'created' => Schema::TYPE_DATETIME,
-				'modified' => Schema::TYPE_DATETIME,
+                'id' => $this->primaryKey(),
+                'type' => $this->string(255)->notNull(),
+                'section' => $this->string(255)->notNull(),
+                'key' => $this->string(255)->notNull(),
+                'value' => $this->text(),
+                'active' => $this->boolean(),
+                'created' => $this->dateTime(),
+                'modified' => $this->dateTime(),
 			],$tableOptions
 		);
+
+        $this->createIndex('settings_unique_key_section', '{{%settings}}', ['section', 'key'], true);
 	}
 
 	public function down()
 	{
+        $this->dropIndex('settings_unique_key_section', '{{%settings}}');
 		$this->dropTable('{{%settings}}');
 	}
 }

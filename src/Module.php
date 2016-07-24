@@ -14,10 +14,20 @@ use Yii;
  */
 class Module extends \yii\base\Module
 {
+    /**
+     * @var string source language for translation
+     */
+    public $sourceLanguage = 'en-US';
+
 	/**
 	 * @var string The controller namespace to use
 	 */
 	public $controllerNamespace = 'efureev\settings\controllers';
+
+    /**
+     * @var null|array The roles which have access to module controllers, eg. ['admin']. If set to `null`, there is no accessFilter applied
+     */
+    public $accessRoles = null;
 
 	/**
 	 * Translates a message. This is just a wrapper of Yii::t
@@ -52,7 +62,7 @@ class Module extends \yii\base\Module
 	{
 		Yii::$app->i18n->translations['extensions/yii2-settings/*'] = [
 			'class' => 'yii\i18n\PhpMessageSource',
-			'sourceLanguage' => 'en-US',
+            'sourceLanguage' => $this->sourceLanguage,
 			'basePath' => '@vendor/efureev/yii2-settings/src/messages',
 			'fileMap' => [
 				'extensions/yii2-settings/settings' => 'settings.php',
